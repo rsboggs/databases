@@ -12,7 +12,8 @@ module.exports = {
       });
     }, // a function which produces all the messages
     post: function (resBody, callback) {
-      var message = '"' + resBody.message + '"';
+      // console.log('------------> req message!', resBody['message_text']);
+      var message = '"' + resBody['message_text'] + '"';
       var roomname = '"' + resBody.roomname + '"';
       var username = '"' + resBody.username + '"';
       db.query('INSERT INTO messages (message_text, roomname, user_id) VALUES(' + message + ',' + roomname +',(SELECT user_id FROM users WHERE username=' + username + '))', function(error)  {
