@@ -7,7 +7,7 @@ USE chat;
 
 
 CREATE TABLE users (
-  user_id INT NOT NULL AUTO_INCREMENT, username VARCHAR(25), PRIMARY KEY(user_id)
+  user_id INT NOT NULL AUTO_INCREMENT, username VARCHAR(25), PRIMARY KEY(user_id), UNIQUE(username)
 );
 
 CREATE TABLE messages (
