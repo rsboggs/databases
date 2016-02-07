@@ -27,10 +27,6 @@ module.exports = {
         .then(function(results) {
           res.json(results);
         });
-
-      models.users.get(function(rows) {
-        res.send(rows);
-      });
     },
     post: function (req, res) {
       console.log('-----------> req', req.body);
